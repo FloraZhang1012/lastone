@@ -23,9 +23,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-t&r6^jtcem32avs%8=(zl1avxlh*e3cljc_5of)jdcqfo1!ld3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = ['.onrender.com', 'localhost', '127.0.0.1']
+
 
 
 # Application definition
@@ -162,7 +164,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -172,11 +176,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # settings.py
 
 CSRF_TRUSTED_ORIGINS = [
-    "http://localhost:5173",
+    "https://lastone-ved9.onrender.com",
+    "http://localhost:5173"
 ]
+
 
 # 如果你用的是 Django 4.0+
 # 还要设置：
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",
+    "https://lastone-ved9.onrender.com",
+    "http://localhost:5173"
 ]
